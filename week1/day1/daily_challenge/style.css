@@ -1,0 +1,34 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+li{
+    float: right;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h1{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+p{
+    display: block;
+    padding-left: 100px;
+    padding-right: 500px;
+}
+div{
+    background-image: url(https://user-images.githubusercontent.com/30896388/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg);
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+
+}
