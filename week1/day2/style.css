@@ -1,0 +1,23 @@
+
+nav{
+    background-color: rgb(174, 139, 139);
+    color: white;
+    height: 50px;
+    text-decoration: white;
+    position: relative;
+    margin: -8px -8px 100px -8px;
+}
+p{
+    float: right;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    right: 10px;
+}
+i{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 10px;
+}

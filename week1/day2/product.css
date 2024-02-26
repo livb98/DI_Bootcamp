@@ -1,0 +1,83 @@
+body{
+    display: inline-block;
+    text-align: center;
+    margin-left: 1px;
+    padding: 1px;
+}
+
+
+img{
+    height: auto;
+    width: 95%;
+
+}
+
+.card{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 20%; 
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+}
+.card p{
+    margin: 10px 0 0 0
+
+}
+.change p{
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px;
+    
+}
+
+.change>:first-child{
+    color: blue;
+    position: relative;
+    
+}
+
+.change>:nth-child(2){
+    text-decoration: line-through;
+    position: relative;
+  
+}
+.new{
+    background-color: greenyellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    
+}
+.new p{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    
+}
+.price{
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+.price p{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+}
