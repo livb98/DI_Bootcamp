@@ -1,3 +1,51 @@
-h1{
-    align-items: left;
+.container{
+    display: block;
+    margin: -8px;
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(https://user-images.githubusercontent.com/30896388/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.nav{
+    display: inline;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: gray;
+    position: absolute;
+    margin-right: 10px;
+}
+.nav ul{
+    list-style: none;
+    float: right;
+    margin: 10px;
+
+}
+.nav ul li{
+    display: inline-block;
+}
+.nav .icone{
+    padding: 20px;
+    width: 30px;
+}
+
+
+.text h1{
+    width: 300px;
+    width: 1000px;
+    margin-top: 150px;
+    margin-left: 50px;
+    
+}
+.text p{
+    width: 300px;
+    width: 20%;
+    margin-bottom: 100px;
+    margin-left: 50px;
+}
+.text{
+    color: rgba(255, 255, 255, 0.889);
 }
