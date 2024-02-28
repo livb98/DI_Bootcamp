@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.A{
+    display: flex;
+    flex-direction: column;
+}
+.B{
+    display: flex;
+}
+.C{
+    display: flex;
+    flex-direction: column;
+}
+.a, .b ,.c, .d{
+    padding: 10px;
+    margin: 2px;
+    background-color: aqua;
+}
+.one, .two, .three, .four{
+    background-color: aqua;
+    padding: 10px;
+    margin: 2px;
+}
