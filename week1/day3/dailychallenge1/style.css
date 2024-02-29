@@ -6,13 +6,16 @@
 .A{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 .B{
     display: flex;
+    justify-content: space-evenly;
 }
 .C{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 .a, .b ,.c, .d{
     padding: 10px;
