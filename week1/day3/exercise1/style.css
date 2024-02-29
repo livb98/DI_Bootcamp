@@ -6,12 +6,13 @@
     grid-template-rows: 200px 700px;    
 }
 .header{
+    display: flex;
+    justify-content: space-between;
     height: auto;
     margin-inline: 10px;
-    display: grid;
-    grid-template-columns: 70% 30%;
     background-color: rgb(242, 223, 199);
     padding-left: 10px;
+    
 }
 img{
     width: 250px;
