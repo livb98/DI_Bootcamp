@@ -7,13 +7,13 @@ print (x)
 
 #exercise3
 print(5 < 3)
-#false
+#my prediction'false'
 print(3 == 3)
 #true
 print(3 == "3")
-#true
+#type error (my prediction 'false')
 print("3" > 3)
-#type error (my prediction false)
+#type error (my prediction 'false')
 print("Hello" == "hello")
 #false
 
