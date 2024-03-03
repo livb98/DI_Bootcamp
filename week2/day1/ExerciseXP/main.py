@@ -9,13 +9,14 @@ print (x)
 print(5 < 3)
 #my prediction'false'
 print(3 == 3)
-#true
+#my predicition true
 print(3 == "3")
-#type error (my prediction 'false')
+#my prediction 'false'
 print("3" > 3)
 #type error (my prediction 'false')
 print("Hello" == "hello")
-#false
+#my prediciton false
+
 
 #exercise4
 computer_brand=input('brand:')
