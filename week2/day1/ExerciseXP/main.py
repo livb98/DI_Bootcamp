@@ -13,7 +13,7 @@ print(3 == 3)
 print(3 == "3")
 #true
 print("3" > 3)
-#false
+#type error (my prediction false)
 print("Hello" == "hello")
 #false
 
