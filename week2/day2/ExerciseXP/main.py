@@ -1,4 +1,4 @@
-#exercise1
+# #exercise1
 my_fav_numbers=set()
 my_fav_numbers={1,3,8}
 my_fav_numbers.add(4)
@@ -15,7 +15,7 @@ print(our_fav_numbers)
 #exercise2
 #no
 
-#exercise3
+# #exercise3
 basket = ["Banana", "Apples", "Oranges", "Blueberries"]
 basket.remove("Banana")
 basket.remove("Blueberries")
@@ -26,7 +26,7 @@ basket.count("Apples")
 basket.clear()
 print(basket)
 
-#exercise4
+# #exercise4
 #float number are number that are number with decimal interger number are number without decimal
 numbers = range(1, 6) 
 final_list=[]
@@ -37,7 +37,7 @@ for number in numbers:
 
 print(final_list[1:-1])
 
-#exercise5
+# #exercise5
 numbers=range(1,21)
 list1=[]
 for number in numbers:
@@ -55,7 +55,7 @@ while name != "Livnath":
 
 print("Finished")
 
-#exercise7
+# #exercise7
 fruits=input("what is your favorite fruits? separate your response by a single space ")
 
 fruit_list=[]
@@ -74,7 +74,7 @@ while True:
 
 print(fruit_list)
 
-#exercise8
+# #exercise8
 while True: 
     topping = input("Please enter topping you would like (enter 'quit'  when you are finished): ")
     if topping == 'quit':
@@ -86,7 +86,7 @@ while True:
 
 print("Goodbye !")
 
-#exercise9
+# #exercise9
 ages=input("age: ").split()
 print(ages)
 price=0
@@ -114,23 +114,19 @@ print(list_age)
 
 #exercise10
 sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
-item_remove=["Pastrami sandwich"]
-
-while item_remove in sandwich_orders:
-    sandwich_orders.remove(item_remove)
-print(sandwich_orders)
-
-sandwichs_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
 items_to_remove = ["Pastrami sandwich"]
 
 for item in items_to_remove:
-    while item in sandwichs_orders:
-        sandwichs_orders.remove(item)
+    while item in sandwich_orders:
+        sandwich_orders.remove(item)
 
-print(sandwichs_orders)
+print(sandwich_orders)
 
-finished_sandwiches=[]
-for i in sandwichs_orders:  
-    finished_sandwiches.append(sandwichs_orders.pop(0))
+finished_sandwiches = []
 
-print(finished_sandwiches)
+while sandwich_orders:
+    sandwich = sandwich_orders.pop(0)  
+    finished_sandwiches.append(sandwich)  
+
+for sandwich in finished_sandwiches:
+    print("I made your ", sandwich)
