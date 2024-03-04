@@ -13,4 +13,4 @@ print(string[-1])
 
 #exercise3
 for i in range(len(string)):
-    print(string[:i+1])
+   print(string[:i+1])
