@@ -1,15 +1,15 @@
 #challenge1
-# word = input('word: ')
-# letter_indexes = {}
+word = input('word: ')
+letter_indexes = {}
 
 
-# for index, letter in enumerate(word):
-#     if letter in letter_indexes:
-#         letter_indexes[letter].append(index)
-#     else:
-#         letter_indexes[letter] = [index]
+for index, letter in enumerate(word):
+    if letter in letter_indexes:
+        letter_indexes[letter].append(index)
+    else:
+        letter_indexes[letter] = [index]
 
-# print(letter_indexes)
+print(letter_indexes)
 
 #challenge2
 items_purchase = {
