@@ -1,6 +1,3 @@
-
-
-
 array = ([['7', 'i', 'i'],
         ['T', 's', 'x'],
         ['h', '%', '?'],
@@ -11,7 +8,7 @@ array = ([['7', 'i', 'i'],
         ['^','r','!']])
 matrix=list(zip(*array))
 message=[]
-a=" "
+
 for row in matrix:
     for element in row:
         if element.isalpha():
@@ -20,5 +17,5 @@ for row in matrix:
             element = element.replace(element, " ")
             message.append(element)
             continue
-        print(message)
+print(message)
 

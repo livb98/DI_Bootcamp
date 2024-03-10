@@ -16,7 +16,7 @@ def player_input(insertItem):
     good = False
     while good == False:
         player = int(input('Enter the index (1-9) to place your item: '))
-        if 0 < player < 9:
+        if 0 < player <= 9:
             if board[player-1] == ' ':
                 good = True
                 board[player - 1] = insertItem
