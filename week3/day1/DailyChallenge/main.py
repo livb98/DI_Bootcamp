@@ -34,6 +34,7 @@ class Farm:
         
     def get_info(self):
         print("E-I-E-I-0!")
+        
 
 Mcdo = Farm('macdo')
 Mcdo.add_animal('cow', 5)
