@@ -1,58 +1,58 @@
-# #exercise1
-# class Cat:
-#     def __init__(self, cat_name, cat_age):
-#         self.name = cat_name
-#         self.age = cat_age
+#exercise1
+class Cat:
+    def __init__(self, cat_name, cat_age):
+        self.name = cat_name
+        self.age = cat_age
         
-# cat1=Cat('flufy',2)
-# cat2=Cat('snow',3)
-# cat3=Cat('nuts',4)
+cat1=Cat('flufy',2)
+cat2=Cat('snow',3)
+cat3=Cat('nuts',4)
    
-# cats_list = [cat1, cat2, cat3]
+cats_list = [cat1, cat2, cat3]
 
-# def oldest_cat():
-#     max_age=max(cat.age for cat in cats_list)
-#     oldest_cats = [cat for cat in cats_list if cat.age == max_age]
-#     for cat in oldest_cats:
-#         print(f'oldest cat is {cat.name}')
+def oldest_cat():
+    max_age=max(cat.age for cat in cats_list)
+    oldest_cats = [cat for cat in cats_list if cat.age == max_age]
+    for cat in oldest_cats:
+        print(f'oldest cat is {cat.name}')
     
-# oldest_cat()
+oldest_cat()
 
-# #exercise2
-# class Dog:
-#     def __init__(self,name,height):
-#         self.name=name
-#         self.height=height
-#         print("name: " + name + "; height: " + height ) 
-#     def bark(self):
-#         print(f'{self.name} goes woof!')
-#     def jump(self):
-#         print(f'{self.name} jump {int(self.height)*2}cm hight!' )
+#exercise2
+class Dog:
+    def __init__(self,name,height):
+        self.name=name
+        self.height=height
+        print("name: " + name + "; height: " + height ) 
+    def bark(self):
+        print(f'{self.name} goes woof!')
+    def jump(self):
+        print(f'{self.name} jump {int(self.height)*2}cm hight!' )
 
-# David_dog=Dog("Rex","50") 
-# David_dog.bark()
-# David_dog.jump()
+David_dog=Dog("Rex","50") 
+David_dog.bark()
+David_dog.jump()
 
-# Sarah_dog=Dog("Teacup","20")
-# Sarah_dog.bark()
-# Sarah_dog.jump()
+Sarah_dog=Dog("Teacup","20")
+Sarah_dog.bark()
+Sarah_dog.jump()
 
-# if Sarah_dog.height>David_dog.height:
-#     print(f'Sarah\'s dog is bigger')
-# elif Sarah_dog.height<David_dog.height:
-#     print(f'David\'s dog is bigger')
-# elif Sarah_dog.height==David_dog.height:
-#     print(f'They\' the same height')
+if Sarah_dog.height>David_dog.height:
+    print(f'Sarah\'s dog is bigger')
+elif Sarah_dog.height<David_dog.height:
+    print(f'David\'s dog is bigger')
+elif Sarah_dog.height==David_dog.height:
+    print(f'They\' the same height')
 
-# #exercise3
-# class Song:
-#     def __init__(self,lyrics):
-#         self.lyrics=lyrics
-#     def sing_me_a_song(self):
-#         print('\n'.join(self.lyrics))
+#exercise3
+class Song:
+    def __init__(self,lyrics):
+        self.lyrics=lyrics
+    def sing_me_a_song(self):
+        print('\n'.join(self.lyrics))
 
-# stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
-# stairway.sing_me_a_song()
+stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
+stairway.sing_me_a_song()
 
 #exercise4
 class Zoo:
