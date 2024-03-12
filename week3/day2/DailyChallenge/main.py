@@ -36,7 +36,7 @@ alphabetList = list("abcdefghijklmnopqrstuvwxyz")
 p = Pagination(alphabetList, 4)
 
 p.getVisibleItems() 
-p.nextPage()
+p.nextPage().nextPage()
 p.getVisibleItems()
 p.lastPage()
 p.getVisibleItems()
