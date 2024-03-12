@@ -93,6 +93,10 @@ class Family:
         else:
             member['is_child']=True        
 
+dave=Family("dave")
+dave.add_member("michael",35,"male",False)
+dave.add_member("John", 35, "male", False)
+dave.family_presentation()
 
 # exercise5
 class TheIncredible(Family):
