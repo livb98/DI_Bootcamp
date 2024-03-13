@@ -32,10 +32,7 @@ class Currency:
                 raise TypeError (f' Cannot add between Currency type {self.currency } and {other.currency}')
         except: 
             return self.amount + other
-                
-    # def __iadd__(self, other):
-    #     self.amount += other
-    #     return self
+
     def __iadd__ (self,other):
         try:
             if self.currency==other.currency:
