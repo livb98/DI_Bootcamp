@@ -44,14 +44,6 @@ class AnagramChecker:
   
 
    
-        
-        
-file_name="sowpods.txt"
-Ac=AnagramChecker(file_name)         
-# print(Ac.get_anagrams("sdfghj"))
-print(Ac.get_anagrams("meat"))
-
-
 
 
 
