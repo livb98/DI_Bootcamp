@@ -47,7 +47,7 @@ class Text:
 test_text=Text('A good book would sometimes cost as much as a good house.')
 text=Text.from_file("the_stranger.txt")
 
-print(text.unique_word())
+print(text.common_word())
 
 
 
