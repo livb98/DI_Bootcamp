@@ -31,7 +31,6 @@ class AnagramChecker:
                 
                       
     def is_valid_word(self,user_word):
-
         return user_word in self.words_list
     
     def get_anagrams(self,user_word):

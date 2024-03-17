@@ -27,6 +27,44 @@
 import random
 
 #exercise2
+# class Cart:
+#     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+#     value = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+       
+# class Deck:
+    
+#     def __init__(self,cards):
+#         self.cards=cards
+#         for i in range (0, len(Cart.value)):
+#             for j in range (0, len(Cart.suits)):
+#                 cards=Cart.value[i] + Cart.suits[j]
+#                 cards_deck.append(cards+' ')  
+ 
+#     def shuffle(self):
+#         random.shuffle(cards_deck)
+    
+#     def deal(self):
+#         for card in cards_deck:
+#             while True:
+#                 if len(cards_deck)!=0:
+#                     cards_deck.remove(card)
+#                     card_remove.append(card)
+#                     print(card_remove)
+#         return cards_deck
+#         # else:
+#         #     return card_remove
+
+      
+# cards_deck=[]
+# cards_deck==52 
+# card_remove=[]
+# p=Deck(cards_deck)
+# p.shuffle()
+# p.deal()
+# print(len(cards_deck))
+
+
+
 class Cart:
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     value = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
@@ -35,20 +73,39 @@ class Deck:
     
     def __init__(self,cards):
         self.cards=cards
+        cards_deck=[]
+        # self.card_deck=[]
         for i in range (0, len(Cart.value)):
             for j in range (0, len(Cart.suits)):
-                cards=Cart.value[i] + Cart.suits[j]
-                cards_deck.append(cards+' ')  
+                self.cards=Cart.value[i] + Cart.suits[j]
+                return cards_deck.append(self.cards)
+        # print(cards_deck)
+        # return cards_deck
+        
+                  
  
     def shuffle(self):
-        random.shuffle(cards_deck)
+        print(random.shuffle(self.cards_deck))
     
     def deal(self):
-        for card in cards_deck:
-            cards_deck.remove(card)
-            return card
-        
-cards_deck=[]
-p=Deck(cards_deck)
-p.shuffle()
-print(p.deal())
+        for card in self.card_deck:
+            while True:
+                if len(self.card_deck)!=0:
+                    self.card_deck.remove(card)
+                    card_remove.append(card)
+                    # print(card_remove)
+        return self.card_deck
+        # else:
+        #     return card_remove
+
+      
+
+# cards_deck==52 
+card_remove=[]
+p=Deck()
+
+# print(p)
+# p.shuffle()
+# print(p.deal())
+# print(len(cards_deck))
+
