@@ -71,41 +71,29 @@ class Cart:
        
 class Deck:
     
-    def __init__(self,cards):
-        self.cards=cards
-        cards_deck=[]
-        # self.card_deck=[]
+    def __init__(self,cards_deck):
+        self.cards_deck= cards_deck
         for i in range (0, len(Cart.value)):
             for j in range (0, len(Cart.suits)):
-                self.cards=Cart.value[i] + Cart.suits[j]
-                return cards_deck.append(self.cards)
-        # print(cards_deck)
-        # return cards_deck
-        
-                  
- 
+                cards=Cart.value[i] + Cart.suits[j]
+                self.cards_deck.append(cards+' ') 
+        # print(self.cards_deck) 
+                
     def shuffle(self):
-        print(random.shuffle(self.cards_deck))
-    
+        random.shuffle(self.cards_deck)
+        # print(self.cards_deck)
+        
     def deal(self):
-        for card in self.card_deck:
-            while True:
-                if len(self.card_deck)!=0:
-                    self.card_deck.remove(card)
-                    card_remove.append(card)
-                    # print(card_remove)
-        return self.card_deck
-        # else:
-        #     return card_remove
 
-      
+        card = random.choices(self.cards_deck)
+        print(card)
+        self.cards_deck.remove(card[0])
+        print(self.cards_deck)
 
-# cards_deck==52 
-card_remove=[]
-p=Deck()
 
-# print(p)
-# p.shuffle()
-# print(p.deal())
-# print(len(cards_deck))
+cards_deck=[]
+cards_remove=[]
+player=Deck(cards_deck)
+# player.shuffle()
+player.deal()
 
