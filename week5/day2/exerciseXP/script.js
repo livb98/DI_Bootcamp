@@ -1,224 +1,144 @@
 // exercise1
-function displayNumbersDivisible() {
-    let sum = 0;
+const people = ["Greg", "Mary", "Devon", "James"];
+// part1
+// q1
+people.shift()
+console.log(people);
 
-    for (let i = 0; i <= 500; i++) {
-        if (i % 23 === 0) {
-            console.log(i);
-            sum += i;
-        }
-    }
+// q2
+people[2] = 'Jason'
+console.log(people);
 
-    console.log(sum);
+// q3
+people.push("Livnath")
+console.log(people);
+
+// q4
+console.log(people.indexOf('Mary'));
+
+// q5
+let peopleBis = people.slice(1,3)
+console.log(peopleBis);
+
+// q6
+console.log(people.indexOf('Foo'));
+// because "Foo" doesn't exist in the list
+
+// q7
+let last  = people.slice(-1)
+console.log(last);
+
+// part2
+// q1
+for (let i=0; i<people.length; i++) {
+    console.log(people[i]);
 }
 
-displayNumbersDivisible();
+// q2
+for (let i = 0; i < people.length; i++) {
+    if (i == 'Devon') { 
+        break;
+      }
+    console.log(people[i]); 
+  }
 
 // exercise2
-const stock = { 
-    "banana": 6, 
-    "apple": 0,
-    "pear": 12,
-    "orange": 32,
-    "blueberry":1
-}  
+// q1
+let colors = ['blue', 'green', 'red', 'purple', 'yellow']
 
-const prices = {    
-    "banana": 4, 
-    "apple": 2, 
-    "pear": 1,
-    "orange": 1.5,
-    "blueberry":10
-} 
-
-let shoppingList = ['banana', 'orange', 'apple']
-
-function myBill(){
-    let price = 0
-    for (let fruit of shoppingList){
-    
-        if (stock[fruit] > 0){
-            console.log(prices[fruit])
-            price += prices[fruit];
-            
-        }
-
-    }
-    console.log(price);
+// q2
+for (let i = 0; i < colors.length; i++) {
+    console.log('My #' + (i+1) + ' choice ' + colors[i]);
 }
-
-myBill()
 
 // exercise3
-function changeEnough(itemPrice, amountOfChange) {
-    const change = [0.25, 0.10, 0.05, 0.01];
-    let sum = 0;
-    
-    for (let i = 0; i < amountOfChange.length; i++) {
-        sum += amountOfChange[i] * change[i];
-    }
-    
-    return sum >= itemPrice;
-}
+// q1
+let user = prompt('give me a number: ')
+console.log(typeof(user));
 
-console.log(changeEnough(14.11, [2, 100, 0, 0])); 
-console.log(changeEnough(4.25, [25, 20, 5, 0])); 
+// q2
+while((user) < 10 ){
+    user = (prompt('give me a number: '));
+}
 
 // exercise4
-function hotelCost(){
-    let nightStay
-    do {
-        nightStay = prompt("How many nights would you like to stay?");
-    } while (isNaN(nightStay) || nightStay.trim() === ""); 
-
-    // return nightStay;
-
-    let costOneNight =  140
-    let costTotal = nightStay*costOneNight
-    
-    return costTotal
-    
-}
-function planeRideCost() {
-    let destination;
-    do {
-        destination = prompt("What is your destination?");
-    } while (!destination || typeof destination !== 'string');
-
-    let priceDestination;
-
-    if (destination.toLowerCase() === 'paris') {
-        priceDestination = 220;
-    } else if (destination.toLowerCase() === 'london') {
-        priceDestination = 183;
-    } else {
-        priceDestination = 300;
-    }
-
-    return priceDestination;
+// q1
+const building = {
+    numberOfFloors: 4,
+    numberOfAptByFloor: {
+        firstFloor: 3,
+        secondFloor: 4,
+        thirdFloor: 9,
+        fourthFloor: 2,
+    },
+    nameOfTenants: ["Sarah", "Dan", "David"],
+    numberOfRoomsAndRent:  {
+        sarah: [3, 990],
+        dan:  [4, 1000],
+        david: [1, 500],
+    },
 }
 
-function rentalCarCost() {
-    let numberOfDays;
-    do {
-        numberOfDays = prompt("How many days would you like to rent the car?");
-    } while (numberOfDays === null || isNaN(numberOfDays) || numberOfDays.trim() === ""); 
+// q2
+console.log(building.numberOfFloors);
 
-    const dailyRate = 40;
-    let totalPrice = numberOfDays * dailyRate;
+// q3
+console.log('there are ' + building.numberOfAptByFloor.firstFloor + ' appartments in the first floor and ' + building.numberOfAptByFloor.thirdFloor + ' appartments in the thirs floor');
 
-    if (numberOfDays > 10) {
-        totalPrice *= 0.95; 
-    }
-    return totalPrice;
+// q4
+console.log(building.nameOfTenants[1] + ' is the second tenant and he has ' + building.numberOfRoomsAndRent.dan[0] + ' rooms')
+
+// q5
+let sarasAndDavidRent = building.numberOfRoomsAndRent.sarah[1] + building.numberOfRoomsAndRent.david[1]
+let danRent = building.numberOfRoomsAndRent.dan[1]
+console.log(sarasAndDavidRent);
+console.log(danRent);
+if (sarasAndDavidRent > danRent) {
+    danRent = danRent + 200
 }
-
-function totalVacationCost() {
-    let hotel = hotelCost();
-    let planeTicket = planeRideCost();
-    let carRental = rentalCarCost();
-
-    let totalCost = hotel + planeTicket + carRental;
-    console.log("Total vacation cost: $" + totalCost);
-    return totalCost;}
-
-totalVacationCost();
+console.log(danRent);
 
 // exercise5
-document.addEventListener("DOMContentLoaded", function() {
-    
-let containerDiv = document.getElementById('container');
-console.log(containerDiv);
+// q1
+let family = {
+    dad: "John",
+    mom: "Lea",
+    sister1: "Ava",
+    sister2: "Bar",
+    brother1: "Roy"
+  };
 
-let peteElement = document.querySelector('ul.list:first-child li:nth-child(2)');
-peteElement.textContent = 'Richard';
+// q2
+for (let i in family) {
+    console.log(i);
+}
 
-let secondUl = document.querySelector('ul.list:last-child');
-let secondLi = secondUl.querySelector('li:nth-child(2)');
-    secondLi.remove();
-
-let ulElements = document.querySelectorAll('ul.list');
-ulElements.forEach(ul => {
-        let firstLi = ul.querySelector('li:first-child');
-        firstLi.textContent = 'Your Name';
-    });
-
-ulElements.forEach(ul => {
-    ul.classList.add('student_list');
-    });
-
-let firstUl = document.querySelector('ul.list:first-child');
-firstUl.classList.add('university', 'attendance');
-
-containerDiv.style.backgroundColor = 'lightblue';
-containerDiv.style.padding = '10px';
-
-let danLi = document.querySelector('ul.list:last-child li:last-child');
-danLi.style.display = 'none';
-
-let richardLi = document.querySelector('ul.list:first-child li:nth-child(2)');
-richardLi.style.border = '1px solid black';
-
-document.body.style.fontSize = '16px';
-});
-
+// q3
+for (let i in family) {
+    console.log(family[i]);
+}
 
 // exercise6
+// q1
+const details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'raindeer'
+  }
 
-var navBar = document.getElementById("navBar");
-navBar.setAttribute("id", "socialNetworkNavigation");
-var newListItem = document.createElement("li")
-var newText = document.createTextNode("Logout")
-newListItem.appendChild(newText)
-var ul = document.querySelector("#socialNetworkNavigation ul")
-ul.appendChild(newListItem)
-var firstLi = ul.firstElementChild;
-var lastLi = ul.lastElementChild;
-console.log("First link: " + firstLi.textContent);
-console.log("Last link: " + lastLi.textContent);
+for ([key, value] of Object.entries(details)) {
+    console.log(` ${key} ${value}`);
+}
 
 // exercise7
-const allBooks = [
-    {
-        title: "To Kill a Mockingbird",
-        author: "Harper Lee",
-        image: "https://example.com/to-kill-a-mockingbird.jpg",
-        alreadyRead: true
-    },
-    {
-        title: "1984",
-        author: "George Orwell",
-        image: "https://example.com/1984.jpg",
-        alreadyRead: false
-    }
-];
-
-
-function renderBooks() {
-    const listBooksSection = document.querySelector('.listBooks');
-    
-    allBooks.forEach(book => {
-
-        const bookDiv = document.createElement('div');
-
-
-        const imageElement = document.createElement('img');
-        imageElement.src = book.image;
-        imageElement.style.width = '100px';
-        bookDiv.appendChild(imageElement);
-
-
-        const titleAuthorText = document.createTextNode(`${book.title} written by ${book.author}`);
-        bookDiv.appendChild(titleAuthorText);
-
-
-        if (book.alreadyRead) {
-            bookDiv.style.color = 'red';
-        }
-
-
-        listBooksSection.appendChild(bookDiv);
-    });
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+// q1
+let societyName = []
+names.sort();
+for (let name of names) {
+    societyName.push(name.charAt(0))
 }
-renderBooks();
+console.log(societyName);
 
+// q2
+console.log(societyName.join(''))
