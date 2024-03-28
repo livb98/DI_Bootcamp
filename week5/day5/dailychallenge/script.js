@@ -1,18 +1,18 @@
 const tasks = [];
-
-document.getElementById("myForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const formTask = document.forms[0].inputTask;
-    const taskValue = formTask.value.trim();
-
-    if (taskValue !== "") {
-        tasks.push(taskValue); 
-        console.log("Task added:", taskValue);
-        console.log("Updated tasks array:", tasks); 
-
-        formTask.value = ""; 
-    } else {
-        console.log("Task input is empty. Please enter a task.");
+const formSubmit = document.getElementById("myForm")
+function addTask(e){
+    e.preventDefault()
+    const formTask = document.getElementById("inputTask")
+    const taskValue = formTask.value.trim() 
+    if (taskValue === ''){
+        console.log("empty");
     }
-});
+    if (taskValue !== ""){
+        tasks.push(formTask.value)
+        console.log(tasks)
+        formTask.value = ''; 
+    }
+
+}
+
+formSubmit.addEventListener("submit",addTask)
