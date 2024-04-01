@@ -52,8 +52,8 @@ const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Res
              { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}];
 
 let welcomeStudent = []
-const arr = users.map((item)=>{
-   welcomeStudent.push(`Hello ${item.firstName}`);
+const arr = users.map((item,index)=>{
+    welcomeStudent[index] = `Hello ${item.firstName}`;
 
 })
 console.log(welcomeStudent);
@@ -84,9 +84,9 @@ const students = [{name: "Ray", course: "Computer Science", isPassed: true},
 
 
 let arr = []
-let studentPass = students.filter((item) =>{
+let studentPass = students.filter((item,index) =>{
     if (item.isPassed == true){
-        arr.push(item)
+        arr[index] = item
         console.log(`Good job ${item.name}, you passed the course in ${item.course}`);
     }
 })
