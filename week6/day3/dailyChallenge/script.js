@@ -6,7 +6,7 @@ class Video{
     }
 
     watch(){
-        return `${this.uploader}, ${this.time}, ${this.title}`
+        return `${this.uploader} watched all ${this.time}sec of ${this.title}`
     }
 }
 
@@ -29,5 +29,6 @@ arrOfVideo.forEach(item =>{
     const {title,uploader,time} = item;
     arr.push(new Video(title,uploader,time))
 })
+console.log(HarryPoter.watch())
 
 console.log(arr);
