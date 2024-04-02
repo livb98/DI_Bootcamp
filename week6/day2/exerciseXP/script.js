@@ -17,13 +17,13 @@ else {
 }
 
 // exercise2
-const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const colors2 = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 const ordinal = ["th","st","nd","rd"];
 
 
-function colorChoice2(colors){
+function colorChoice2(colors2){
     let [a,b,c,d] = ordinal
-            return colors.map ((i,index) =>
+            return colors2.map ((i,index) =>
                index == 0 ? `${(index+1)}${b} choice is ${i}` :
                index == 1 ? `${index+1}${c} choice is ${i}` : 
                index == 2 ? `${index+1}${d} choice is ${i}` :
@@ -33,7 +33,7 @@ function colorChoice2(colors){
         }
     
 
-console.log(colorChoice2(colors))
+console.log(colorChoice2(colors2))
 
 //exercise3
 //------1------
@@ -83,12 +83,12 @@ const students = [{name: "Ray", course: "Computer Science", isPassed: true},
                {name: "Jamie", course: "Big Data", isPassed: false}];
 
 
-let arr = []
+let arr2 = []
 let studentPass = students.filter((item,index) =>{
     if (item.isPassed == true){
-        arr[index] = item
+        arr2[index] = item
         console.log(`Good job ${item.name}, you passed the course in ${item.course}`);
     }
 })
-console.log(arr);
+console.log(arr2);
 
