@@ -1,29 +1,50 @@
 // DC1
-// Create two functions. Each function should return a promise.
-// The first function called makeAllCaps(), takes an array of words as an argument
-// If all the words in the array are strings, resolve the promise. The value of the resolved promise is the array of words uppercased.
-// else, reject the promise with a reason.
-// The second function called sortWords(), takes an array of words uppercased as an argument
-// If the array length is bigger than 4, resolve the promise. The value of the resolved promise is the array of words sorted in alphabetical order.
-// else, reject the promise with a reason.
+let array = ['at','rts','efrv','erb']
 
-// DC2
-// Create three functions. The two first functions should return a promise..
+function makeAllCaps(arr) {
+    return new Promise((res, rej) => {
+        arr.forEach((element, index, arr) => {
+            if (typeof element === "string") {
+                arr[index] = element.toUpperCase();
+            } else {
+                rej('not each element is a string');
+            }
+        });
+        res(arr);
+    });
+}
 
-// The first function is named toJs():
-// this function converts the morse json string provided above to a morse javascript object.
-// if the morse javascript object is empty, throw an error (use reject)
-// else return the morse javascript object (use resolve)
 
-// The second function called toMorse(morseJS), takes one argument: the new morse javascript object.
+function sortWords(arr){
 
-// This function asks the user for a word or a sentence.
-// if the user entered a character that doesn’t exist in the new morse javascript object, throw an error. (use reject)
+    return new Promise((res,rej) => {
+        if (arr.length >= 4) {
+            res (arr.sort());
+         
+        }
+        else {
+            rej('lenght of array different than 4')
+        }
+})}
 
-// else return an array with the morse translation of the user’s word.
+makeAllCaps([1, "pear", "banana"])
+      .then((arr) => sortWords(arr))
+      .then((result) => console.log(result))
+      .catch(error => console.log(error))
 
-// The third function called joinWords(morseTranslation), takes one argument: the morse translation array
 
-// this function joins the morse translation by using line break and display it on the page (ie. On the DOM)
+makeAllCaps(["apple", "pear", "banana"])
+      .then((arr) => sortWords(arr))
+      .then((result) => console.log(result))
+      .catch(error => console.log(error))
 
-// Chain the three functions.
+
+
+makeAllCaps(["apple", "pear", "banana", "melon", "kiwi"])
+      .then((arr) => sortWords(arr))
+      .then((result) => console.log(result)) 
+      .catch(error => console.log(error))
+
+
+
+
