@@ -1,14 +1,32 @@
 // exercise1
-// Create a function called compareToTen(num) that takes a number as an argument.
-// The function should return a Promise:
-// the promise resolves if the argument is less than or equal to 10
-// the promise rejects if argument is greater than 10.
+function compareToTen(num){
+    return new Promise((res,rej) => {
+        if (num <= 10){
+        res ("resolved")
+        } else {
+            rej ("rejected")
+        }
+    
+    })
+
+}
+
+compareToTen(15)
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
 
 // exercise2
-// Create a promise that resolves itself in 4 seconds and returns a “success” string.
+let success = new Promise((res,rej) => {
+    setTimeout(() =>{
+        res('sucess')
+    }, 4000)
+})
+console.log(success);
 
 // exercise3
-// Use Promise.resolve(value) to create a promise that will resolve itself with a value of 3.
-// Use Promise.reject(error) to create a promise that will reject itself with the string “Boo!”
+const p = Promise.resolve(3)
+const p2 = Promise.reject('Booo!')
 
+p.then(res => console.log(res)).catch(err => console.log(err))
+p2.then(res => console.log(res)).catch(err => console.log(err))
 
