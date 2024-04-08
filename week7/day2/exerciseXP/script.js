@@ -20,10 +20,7 @@ function fetchGiphy(){
 // fetchGiphy()
 
 // exercise2
-async function GiphySun(){
-    let value1 = 'sun'
-    let value2 ='g'
-    let value3 = 'hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+async function GiphySun(value1,value2,value3){
     const url = `https://api.giphy.com/v1/gifs/search?q=${value1}&rating=${value2}&api_key=${value3}`
     const options = {
         method: 'GET'
@@ -38,7 +35,7 @@ async function GiphySun(){
     }
 }
 
-GiphySun()
+GiphySun('sun','g','hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My')
 
 // exercise3
 const fetchSwapi = async (url) => {
