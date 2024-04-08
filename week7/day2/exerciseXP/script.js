@@ -29,8 +29,6 @@ async function GiphySun(){
         method: 'GET'
     }
     try {
-        const newURL = await window.location.search
-        console.log(newURL);
         const res = await fetch(url, options);
         const obj = await res.json();
         const data = await Object.values(obj)[0]
