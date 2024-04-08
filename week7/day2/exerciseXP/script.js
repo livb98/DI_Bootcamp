@@ -17,18 +17,23 @@ function fetchGiphy(){
     })
 
 }
-fetchGiphy()
+// fetchGiphy()
 
 // exercise2
 async function GiphySun(){
-    const url ='https://api.giphy.com/v1/gifs/search?q=sun&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+    let value1 = 'sun'
+    let value2 ='g'
+    let value3 = 'hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+    const url = `https://api.giphy.com/v1/gifs/search?q=${value1}&rating=${value2}&api_key=${value3}`
     const options = {
         method: 'GET'
     }
     try {
-        let res = await fetch(url, options);
-        let obj = await res.json();
-        let data = await Object.values(obj)[0]
+        const newURL = await window.location.search
+        console.log(newURL);
+        const res = await fetch(url, options);
+        const obj = await res.json();
+        const data = await Object.values(obj)[0]
         console.log(Object.values(data).slice(1,11));  
     } catch (err) {
         console.log(err);
@@ -48,7 +53,7 @@ const fetchSwapi = async (url) => {
         console.log(`error is ${e}`);
     }
 }
-fetchSwapi("https://www.swapi.tech/api/starships/9/")
+// fetchSwapi("https://www.swapi.tech/api/starships/9/")
 
 // exercise4
 // calling
