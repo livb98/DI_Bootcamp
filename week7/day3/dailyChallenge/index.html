@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sctyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" class="main">
+        <div id="converter" class="converter">
+            <div id="currency" class="currency">
+                <label for="currencyfrom">from: </label><br>
+                <select name="currencyfrom" id="currencyFrom"></select><br>
+                <label for="currencyto">to:</label><br>
+                <select name="currencyto" id="currencyTo"></select>
+                
+            </div>
+            <div id="amount" class="amount">amount:
+                <input type="number" id="search">
+                <button type="submit" value="convert" id="submit" >convert</button><br>
+                <div id="result" class="result">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
