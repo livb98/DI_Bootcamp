@@ -1,19 +1,46 @@
-#loading {
-    position: fixed;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    opacity: 0.7;
-    background-color: #fff;
-    z-index: 99;
-  }
-  
-  #loading-image {
-    position: absolute;
-    top: 100px;
-    left: 240px;
-    z-index: 100;
-  }
+.main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 100vh;
+    padding: 100px;
+    align-items: center;
+    background-color: black;
+    justify-content: space-evenly;
+    background-image: url('https://media.istockphoto.com/id/498478219/fr/photo/%C3%A9toiles-dans-le-ciel-de-nuit.jpg?s=612x612&w=0&k=20&c=0xG-QaSg-eNCFu8aheBUSGsnpZVBkOFHAbkDUixlXUA=');
+
+}
+
+.find{
+    border: solid yellow 2px;
+    font-size: 200%;
+    border-radius: 25px;
+    padding: 1%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid yellow 2px;
+    padding: 70px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 25px;
+
+}
+.dis {
+    font-size: 300%;
+
+}
+.spinner {
+    font-size: 500%;
+    
+}
+
+.fa-spinner {
+    color: white;
+
+}

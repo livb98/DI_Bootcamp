@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div id="main" class="main">
-        <div id="info" class="info" >
-            <div id="name"> </div>
-            <div id="height"> </div>
-            <div id="gender"> </div>
-            <div id="birth"> </div>
-            <div id="world"> </div>
+        
+        <div id="info" class="info">
+            <div class="inline" id = loadblock>
+                <p class="spinner" id="load" style="display: none;" ><i class="fa fa-spinner  fa-spin-pulse"> </i> LOADING</p>
+            </div>
+            <div id="name" class="dis"> </div>
+            <div id="height" class="dis"> </div>
+            <div id="gender"class="dis"> </div>
+            <div id="birth"class="dis"> </div>
+            <div id="world"class="dis"> </div>
         </div>
-        <button id="find" class="find" onclick="findChar()" type="submit">find someone</button>
-        <!-- <div id="loading">
-            <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." />
-        </div>
-     -->
+        <button id="find" class="find"  type="submit">find someone</button>
+        
     </div>
+   
     <script src="script.js"></script>
 </body>
 </html>
