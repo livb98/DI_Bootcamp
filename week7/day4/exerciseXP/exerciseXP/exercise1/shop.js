@@ -1,11 +1,11 @@
-const arr = require('../product.js');
 
-
+import {arr} from './product.js'
 
 
 function findObj(name){
 
-    return arr[name];
+   const prodSearch = arr.find(product => product.name === name )
+   return prodSearch
 
 }
-console.log(findObj(1));
+console.log(findObj('a'))

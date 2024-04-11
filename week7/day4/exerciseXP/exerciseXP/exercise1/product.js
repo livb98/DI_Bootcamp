@@ -1,5 +1,5 @@
 // exercise1
-let arr = [
+export let arr = [
     {name: 'a',
     price: 'a$',
     category: 'A'},
@@ -12,6 +12,6 @@ let arr = [
 ]
 
 
-module.exports = arr;
+
 
 
