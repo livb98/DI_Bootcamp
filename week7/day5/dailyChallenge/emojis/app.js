@@ -5,6 +5,8 @@ const {emojis} = require("./emojis/emojis.js")
 let score = 0
 const app = express()
 
+let boardScore = []
+
 app.use(cors())
 app.use(express.static(__dirname + "/public"))
 
@@ -26,8 +28,9 @@ app.get('/emojis', (req,res) => {
 
 })
 app.get('/reset-score', (req, res) => {
-  score = 0; // Reset the score
-  res.json({ message: 'Score reset successfully.' });
+  boardScore.push(score)
+  score = 0; 
+  res.json({boardScore, message: 'Score reset successfully.' });
 });
 
 

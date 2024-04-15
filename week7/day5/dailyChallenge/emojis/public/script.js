@@ -1,7 +1,7 @@
 let randomEmoji = {}
 const result = document.getElementById("result")
 let playerScore 
-let bestScore = []
+
 
 
 
@@ -58,16 +58,31 @@ function guessAnEmoji(){
    }
 let newGame = document.getElementById("newGame")
 
+
+
 newGame.addEventListener('click', function(){
     fetch("http://127.0.0.1:3001/reset-score", {
         method: 'GET'
     })
     .then((res) => res.json())
     .then((data) => {
-        console.log(data.message); 
+        console.log(data.message, data.boardScore); 
+        bestScore(data.boardScore)
         getRandom(); 
     })
     .catch((err) => {
         console.log(err);
     })
 });
+
+function bestScore(score){
+    try {
+    let board = document.createElement('div')
+    result.appendChild(board)
+    board.id = 'board'
+    board.innerHTML = `previous players score: ${score}`
+    console.log('working');
+    } catch (err) {
+        console.log(err);
+    }
+}
