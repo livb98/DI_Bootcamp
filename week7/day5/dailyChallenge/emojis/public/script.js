@@ -13,7 +13,6 @@ function getRandom(){
         let option = data.shuffleEmojis
         let score = data.score
         render(randomEmoji,option,score)
-        console.log(score);
     })
     .catch((err) => {
         console.log(err);
@@ -27,7 +26,7 @@ function render(emoji, options,score){
         return ` ${item.name}`
     })
     const root = document.getElementById("root")
-    root.innerHTML = 'options: ' + html.join("") + " hint:" + emoji.emoji
+    root.innerHTML = " hint:" + emoji.emoji
     result.innerHTML = `your score is ${score}`
     return result
 }
@@ -36,9 +35,7 @@ function render(emoji, options,score){
 
 function guessAnEmoji(){
     const guess = document.getElementById("guess").value
-    console.log(guess);
     const name = randomEmoji.name
-    console.log(name);
 
     fetch("http://127.0.0.1:3001/emojis", {
         method: 'POST',
