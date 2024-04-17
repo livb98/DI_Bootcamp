@@ -21,7 +21,7 @@ const _updateTask = (id,task, done) => {
     .update({task:task,done:done}, ['*'])
     .where({id:id})
 }
-// DELETE /tasks/:id: Delete a task by ID from the JSON file.
+
 
 const _delTask = (id) => {
     return db('task')

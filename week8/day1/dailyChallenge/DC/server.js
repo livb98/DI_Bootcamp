@@ -24,5 +24,8 @@ app.get('/question', (req,res) => {
   let answer = triviaQuestions[index].answer
   let trivia = triviaQuestions[index]
   res.json(trivia)
+
   // res.json(answerToQuestion)
 })
+
+console.log(triviaQuestions);
