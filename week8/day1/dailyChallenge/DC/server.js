@@ -17,20 +17,12 @@ const { triviaQuestions } = require('./question/data.js');
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
 
-app.use('/', router)
-
+// app.use('/', router)
+let index = 0;
 app.get('/question', (req,res) => {
-  let trivia = triviaArr(triviaQuestions)
-  res.json({trivia})
+  let questions = triviaQuestions[index].question
+  let answer = triviaQuestions[index].answer
+  let trivia = triviaQuestions[index]
+  res.json(trivia)
+  // res.json(answerToQuestion)
 })
-
-const triviaArr = (arr) => {
-  let newArr = [];
-  for (let i of arr) {
-    newArr.push(i);
-  }
-  console.log(newArr);;
-}
-triviaArr(triviaQuestions)
-
-// app.get('/question', getQuizz)

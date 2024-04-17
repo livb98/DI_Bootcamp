@@ -1,31 +1,43 @@
-let question = {};
+let questionAsk = {};
+let userAnswer = document.getElementById("answer")
+let questionUser = document.getElementById("question")
+let subAnswer = document.getElementById("subAnswer")
+let divAnswer = document.getElementById("answerDiv")
+let result = document.getElementById("result")
+let answerToQuestion
 
-
-function getRandom() {
+function getQuizz() {
   fetch("http://127.0.0.1:3001/question")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      
+      questionAsk = data.question
+      answerToQuestion = data.answer
+      render(questionAsk)
     })
     .catch((err) => {
       console.log(err);
     });
 }
 
-getRandom();
+getQuizz();
 
-// function getRandom() {
-//     fetch("http://127.0.0.1:3002/emojis")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         console.log(data);
-//         randomEmoji = data.randomEmoji;
-//         console.log(randomEmoji);
-//         // let options = data.shuffleEmojis;
-//         // render(randomEmoji, options);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   }
+function render(question) {
+  console.log(question);
+  questionUser.innerHTML = question
+
+  }
+
+const submitAnswer = () => {
+  userAnswer.value;
+  try {
+    if (userAnswer.value.toLowerCase() === answerToQuestion.toLowerCase()){
+      result.innerHTML = 'good answer'
+    }
+    else{
+      result.innerHTML = 'wrong answer';
+    }
+  } catch (e){
+    console.log(e);
+  }
+}
+
