@@ -30,8 +30,10 @@ let currentAnswerIndex = 0
 // }
 // GET /quiz/score: Display the user’s final score at the end of the quiz.
 
+
 module.exports = {
     getQuizz,
+
     // startQuizz,
     // displayAnswer
 }

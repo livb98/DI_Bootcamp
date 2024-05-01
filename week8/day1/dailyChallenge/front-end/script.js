@@ -6,13 +6,15 @@ let divAnswer = document.getElementById("answerDiv")
 let result = document.getElementById("result")
 let answerToQuestion
 
+let i
 function getQuizz() {
+
   fetch("http://127.0.0.1:3001/question")
     .then((res) => res.json())
-    .then((data) => {
-      questionAsk = data.question
-      answerToQuestion = data.answer
-      render(questionAsk)
+    .then((data) => { 
+      questionAsk = data[0].question;
+      answerToQuestion = data[0].answer;
+      questionUser.innerHTML = questionAsk
     })
     .catch((err) => {
       console.log(err);
@@ -21,23 +23,22 @@ function getQuizz() {
 
 getQuizz();
 
-function render(question) {
-  console.log(question);
-  questionUser.innerHTML = question
-
-  }
 
 const submitAnswer = () => {
-  userAnswer.value;
-  try {
-    if (userAnswer.value.toLowerCase() === answerToQuestion.toLowerCase()){
-      result.innerHTML = 'good answer'
+    userAnswer.value
+    try {
+      if (userAnswer.value.toLowerCase() === answerToQuestion.toLowerCase()){
+        result.innerHTML = 'good answer'
+        getQuizz2()
+      }
+      else{
+        result.innerHTML = 'wrong answer';
+      };
     }
-    else{
-      result.innerHTML = 'wrong answer';
+    catch (e){
+      console.log(e);
     }
-  } catch (e){
-    console.log(e);
-  }
+
 }
+
 

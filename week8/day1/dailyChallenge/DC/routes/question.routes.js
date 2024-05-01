@@ -7,5 +7,6 @@ const {getQuizz} = require('../controller/question.controller')
 module.exports = router
 
 router.get('/question', getQuizz)
+
 // router.get('/quizz', startQuizz)
 // router.post('/quizz', displayAnswer)
