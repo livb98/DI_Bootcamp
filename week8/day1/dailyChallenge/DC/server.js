@@ -22,7 +22,6 @@ let index = 0;
 app.get('/question',question)
 
 function question(req,res){
-
   let questions = triviaQuestions[index].question
   let answer = triviaQuestions[index].answer
   let trivia = triviaQuestions[index]
