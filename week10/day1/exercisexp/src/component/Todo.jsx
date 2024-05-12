@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useRef} from "react";
+import Edit from "../../../dailychallenge/component/Edit";
+
 
 const Todo = () => {
     const [list, setList] = useState([])
@@ -29,8 +31,9 @@ const Todo = () => {
         <div>
             <ul>
                 {list.map((item,i) => <li key={i}>{item}
-                {/* <button onClick={console.log(item)}>remove</button></li>)} */}
-                <button onClick={() => handleRemoveTodo(i)}>remove</button></li>)}
+                <button onClick={() => handleRemoveTodo(i)}>remove</button>
+                <Edit/></li>)}
+                
             </ul>
 
         </div>
