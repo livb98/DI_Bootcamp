@@ -1,16 +1,13 @@
 import React, { useReducer, useState } from "react";
 
-// Reducer function
+
 function todoReducer(state, action) {
   switch (action.type) {
     case "ADD_TODO":
-      // Add a new todo to the state
       return [...state, { id: Date.now(), text: action.text }];
     case "REMOVE_TODO":
-      // Remove a todo by its id
       return state.filter((todo) => todo.id !== action.id);
       case "EDIT_TODO":
-        // Edit a todo by its id
         return state.map((todo) =>
           todo.id === action.id ? { ...todo, text: action.text } : todo
         );
@@ -22,8 +19,8 @@ function todoReducer(state, action) {
 function TodoList() {
   const [todos, dispatch] = useReducer(todoReducer, []);
   const [todoText, setTodoText] = useState("");
-  const [editId, setEditId] = useState(null); // Track the id of the todo being edited
-  const [editText, setEditText] = useState(""); // Track the edited text
+  const [editId, setEditId] = useState(null); 
+  const [editText, setEditText] = useState(""); 
 
   const handleAddTodo = () => {
     if (todoText.trim() === "") return;
