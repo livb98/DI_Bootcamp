@@ -1,46 +1,104 @@
-import { plannerSlice } from "./plannerSlice"
-import { useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import {
-    addtask,
-    filtertask
-} from './plannerSlice'
+// import React, { useRef } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addtask, filtertasksbydate, deletetask } from './plannerSlice';
 
-const Task = (date ) => {
-    const task = useSelector(state => state.plannerReducer.task)
-    const taskRef = useRef()
-    const dispatch = useDispatch()
+// const Task = ({ date }) => {
+//     const task = useSelector(state => state.plannerReducer.task)
+//     const taskRef = useRef();
+//     const dispatch = useDispatch();
 
+//     const addTask = () => {
+//         dispatch(addtask({ name: taskRef.current.value, date }));
+//         taskRef.current.value = '';
+//     };
 
-    const addTask = () => {
-        dispatch(addtask({name: taskRef.current.value, date: date }))
-        taskRef.current.value = ''
+//     const filterTask = () => {
+//         dispatch(filtertasksbydate({ date }));
+//     };
+//         const handleDeleteTask = (id) => {
+//         dispatch(deletetask({ id }));
+//     };
 
-    }
+//     return (
+//         <div>
+//             <h2>Todo List</h2>
+//             <input ref={taskRef} />
+//             <button onClick={addTask}>Add Task</button>
+//             <button onClick={filterTask}>Filter Tasks</button>
+//             <div>
+//                 {task.map(item => (
+//                     <div key={item.id}>
+//                         {item.name}
+//                         <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+//                     </div>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
 
-    const filterTask = () => {
-        dispatch(filtertask({date}))
+// export default Task;
+import React, { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTask, editTask, deleteTask } from './plannerSlice';
 
-    }
+const Task = ({ date }) => {
+    const tasks = useSelector(state => state.plannerReducer.tasks.filter(task => task.date === date));
+    const taskRef = useRef();
+    const dispatch = useDispatch();
+    const [editingTask, setEditingTask] = useState(null);
+    const [taskName, setTaskName] = useState('');
+
+    const handleAddTask = () => {
+        dispatch(addTask({ name: taskRef.current.value, date }));
+        taskRef.current.value = '';
+    };
+
+    const handleEditTask = (task) => {
+        setEditingTask(task.id);
+        setTaskName(task.name);
+    };
+
+    const handleUpdateTask = () => {
+        dispatch(editTask({ id: editingTask, name: taskName }));
+        setEditingTask(null);
+        setTaskName('');
+    };
+
+    const handleDeleteTask = (id) => {
+        dispatch(deleteTask({ id }));
+    };
+
     return (
-        <>
         <div>
-            <h2>todo list </h2>
-            <input ref={taskRef}/>
-            <button onClick={()=>addTask()}>add task</button>
-            <button onClick={()=>filterTask()}>Filter Tasks</button>
+            <h2>Todo List for {date}</h2>
+            <input ref={taskRef} placeholder="New Task" />
+            <button onClick={handleAddTask}>Add Task</button>
             <div>
-                {task.map(item => 
-                    {return  (
-                    <div key={item.id}>
-                        {item.name}
+                {tasks.map(task => (
+                    <div key={task.id}>
+                        {editingTask === task.id ? (
+                            <div>
+                                <input 
+                                    value={taskName} 
+                                    onChange={(e) => setTaskName(e.target.value)} 
+                                    placeholder="Edit Task"
+                                />
+                                <button onClick={handleUpdateTask}>Update</button>
+                            </div>
+                        ) : (
+                            <div>
+                                {task.name}
+                                <button onClick={() => handleEditTask(task)}>Edit</button>
+                                <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+                            </div>
+                        )}
                     </div>
-                )})}
+                ))}
             </div>
         </div>
-            
-        </>
-    )
-}
+    );
+};
 
-export default Task
+export default Task;
+
