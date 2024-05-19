@@ -8,6 +8,7 @@ import Genre from "./Genre";
 
 const BooksList = ({title, author, genreBook}) => {
     const bookslist = useBooksSelector()
+    const selectedGenre = useSelector(state => state.bookReducer.genre)
     console.log(bookslist);
     const titleRef = useRef()
     const authorRef = useRef()
@@ -27,14 +28,17 @@ const BooksList = ({title, author, genreBook}) => {
         authorRef.current.value = ''
         setGenre(checked[0])
     }
-
+    const handleChange = (e) => {
+        setGenre(e.target.value)
+    }
+    const filter = bookslist.filter(item => item.genre === selectedGenre) 
     return (
         <>
         <h2>books: </h2>
         <div>
         <input ref={titleRef} placeholder="title"/><br/>
         <input ref={authorRef} placeholder="author"/><br/>
-        <fieldset ref={genreRef}>
+        <fieldset ref={genreRef} onChange={handleChange} >
         <input  type="radio" value="horror" name="genre"/>
         <label htmlFor='horror'>horror</label>
         <input  type="radio" value="fantasy" name="genre"/>
@@ -44,17 +48,17 @@ const BooksList = ({title, author, genreBook}) => {
         </fieldset>
         <button onClick={handleAddBooks}>add book</button>
         <div>
-        <Genre genre={genre}/>
+        <Genre genre={genre} />
             {
-                bookslist.map(book => {return (
-                <ul>
+                filter.map(book => {return (
+                    <>
+                    <ul>
                     <li key={book.id}>{book.title}</li>
-                </ul>)})
+                    </ul>
+                    </>
+                )})
             }
         </div>
-        </div>
-        <div>
-            
         </div>
 
         </>
