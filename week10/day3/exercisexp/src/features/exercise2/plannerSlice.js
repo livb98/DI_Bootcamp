@@ -1,28 +1,3 @@
-// import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
-
-// const initialState = {
-//     task: []
-// };
-
-// export const plannerSlice = createSlice({
-//     name: 'planner',
-//     initialState: initialState,
-//     reducers: {
-//         addtask: (state, action) => {
-//             state.task.push({ id: nanoid(), name: action.payload.name, completed: false, date: action.payload.date });
-//         },
-//         filtertasksbydate: (state, action) => {
-//             state.task = state.task.filter(task => task.date === action.payload.date);
-//         },
-//         deletetask: (state, action) => {
-//             state.task = state.task.filter(task => task.id !== action.payload.id);
-//             state.task.slice(state.task.id,1)
-//         },
-//     }
-// });
-
-// export const { addtask, filtertasksbydate, deletetask } = plannerSlice.actions;
-// export default plannerSlice.reducer;
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {

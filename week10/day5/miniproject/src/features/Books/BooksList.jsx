@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { useBooksSelector} from "./bookHooks";
 import { addbooks } from "./bookSlice";
-
 import Genre from "./Genre";
 
 

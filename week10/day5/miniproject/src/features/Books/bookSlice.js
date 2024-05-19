@@ -1,7 +1,4 @@
-import {createSlice, createAsyncThunk, nanoid} from '@reduxjs/toolkit'
-import axios from 'axios'
-import { useSelector } from 'react-redux'
-
+import {createSlice, nanoid} from '@reduxjs/toolkit'
 
 const initialState = {
     books: [],
