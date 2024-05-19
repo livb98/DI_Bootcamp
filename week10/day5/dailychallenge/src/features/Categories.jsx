@@ -19,10 +19,6 @@ const CategoriesList = () => {
         dispatch(removeCategory(item))
     }
 
-    const filter = (category) => {
-        dispatch(filterCategory(category))
-        console.log(category);
-    }
 
     return (
         <>
@@ -34,7 +30,6 @@ const CategoriesList = () => {
                     <div key={index}>
                         {category}
                         <button onClick={()=>handleRemoveCategory(category)}>remove</button>
-                        <button onClick={()=>filter(category)}>filter by categories</button>
                         </div>
                 ))}
             </div>
