@@ -1,11 +1,11 @@
-import PostList from './features/Books/Books'
+import BooksList from './features/Books/BooksList'
 import './App.css'
 
 function App() {
 
   return (
     <>
-    <PostList/>
+    <BooksList />
     </>
   )
 }
