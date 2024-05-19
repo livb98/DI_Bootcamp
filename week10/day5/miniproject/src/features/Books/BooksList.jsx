@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { useBooksSelector } from "./bookHooks";
-import { addbooks, filterbooks } from "./bookSlice";
-import { current } from "@reduxjs/toolkit";
+import { useBooksSelector} from "./bookHooks";
+import { addbooks } from "./bookSlice";
+
 import Genre from "./Genre";
 
 
-const BooksList = ({title, author, genreBook}) => {
+const BooksList = () => {
     const bookslist = useBooksSelector()
     const selectedGenre = useSelector(state => state.bookReducer.genre)
+    
     console.log(bookslist);
     const titleRef = useRef()
     const authorRef = useRef()
@@ -17,7 +18,6 @@ const BooksList = ({title, author, genreBook}) => {
     const dispatch = useDispatch()
 
     const handleAddBooks = () => {
-        // console.log(genreRef.current.elements);
         const checked = Array.from(genreRef.current.elements).filter(item=>{
             return item.checked
         })
@@ -60,7 +60,6 @@ const BooksList = ({title, author, genreBook}) => {
             }
         </div>
         </div>
-
         </>
     )
 }

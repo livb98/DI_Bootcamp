@@ -8,7 +8,6 @@ const Genre = (props) => {
     const fiction = useFictionSelector()
     const fantasy = useFantasySelector()
     const bookslist = useBooksSelector()
-    const genreRef = useRef()
     console.log(bookslist);
     const dispatch = useDispatch()
 
@@ -21,14 +20,7 @@ const Genre = (props) => {
     return (
         <>
         <div>
-        {/* <fieldset> */}
-            {/* <select name='genre' >
-                <option value={horror}>horror</option>
-                <option value='fantasy'>fantasy</option>
-                <option value='fiction'>fiction</option>
-            </select> */}
             <button onClick={filteredBooks}>genre</button>
-        {/* </fieldset> */}
         </div>
         </>
     )

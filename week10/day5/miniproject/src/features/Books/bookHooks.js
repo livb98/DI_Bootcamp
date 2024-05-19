@@ -1,6 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { useDispatch, useSelector } from "react-redux";
-import { useCallback } from 'react'
+import { useSelector } from "react-redux";
 import { state } from "./bookSlice";
 
 export const useBooksSelector = () => {
@@ -20,4 +19,3 @@ export const useFictionSelector = () => {
     const fictionSelector = createSelector(state, (state) => state.books.fiction)
     return fictionSelector
 }
-
