@@ -14,7 +14,6 @@ const bookSlice = createSlice({
             state.books.push({id:nanoid(), title: action.payload.title, author: action.payload.author, genre: action.payload.genre})
         },
         filterbooks: (state,action) => {
-            // state.books = state.books.filter(item=>item.genre === action.payload.genre)
             state.genre = action.payload
         }
         

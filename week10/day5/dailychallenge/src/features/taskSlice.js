@@ -2,29 +2,41 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
     tasks: [],
-}
+    categories: []
+};
 
-export const taskSlice = createSlice({
+export const tasksSlice = createSlice({
     name: 'tasks',
     initialState: initialState,
     reducers: {
-        addtask: (state, action) => {
-            state.tasks.push({ id: nanoid(), name: action.payload.name, completed: false });
+        addTask: (state, action) => {
+            state.tasks.push({ 
+                id: nanoid(), 
+                name: action.payload.name, 
+                completed: false, 
+                category: action.payload.category 
+            });
         },
-        completetask : (state, action) => {
-            console.log(action);
-            state.tasks[action.payload].completed = !state.tasks[action.payload].completed
+        completeTask: (state, action) => {
+            const task = state.tasks.find(task => task.id === action.payload);
+            if (task) {
+                task.completed = !task.completed;
+            }
         },
-        removetask: (state, action) => {
-            state.tasks = state.tasks.filter(task => {
-                task.id !== action.payload
-            })
-            state.tasks.slice(state.tasks,1)
+        removeTask: (state, action) => {
+            state.tasks = state.tasks.filter(task => task.id !== action.payload);
+        },
+        addCategory: (state, action) => {
+            state.categories.push(action.payload);
+        },
+        removeCategory: (state, action) => {
+            state.categories = state.categories.filter(category => category !== action.payload)
+        },
+        filterCategory: (state, action) => {
+            state.categories = action.payload
         }
     }
+});
 
-
-})
-
-export const {addtask, completetask, removetask} = taskSlice.actions
-export default taskSlice.reducer
+export const { addTask, completeTask, removeTask, addCategory, removeCategory, filterCategory } = tasksSlice.actions;
+export default tasksSlice.reducer;
