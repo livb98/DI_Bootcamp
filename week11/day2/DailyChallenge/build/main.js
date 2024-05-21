@@ -1,12 +1,10 @@
 "use strict";
 function validateUnionType(value, allowedTypes) {
-    if (typeof value === "string") {
-        return true;
+    for (let i = 0; i < allowedTypes.length; i++) {
+        if (typeof value === allowedTypes[i]) {
+            return true;
+        }
     }
-    else {
-        return false;
-    }
+    return false;
 }
-console.log(validateUnionType(12, []));
-console.log(validateUnionType('12', []));
-console.log(validateUnionType(true, []));
+console.log(validateUnionType(12123456789765432, ["string", "number"]));
