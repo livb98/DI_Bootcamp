@@ -1,27 +1,3 @@
-// exercise1
-class Person  {
-    constructor(
-        private firstName : string,
-        private lastName: string,
-        public age: number,
-        protected adress: string
-
-    ) {
-        this.firstName = firstName
-        this.lastName = lastName
-        this.age = age
-        this.adress = adress
-    }
-
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`
-    }
-
-}
-
-let A = new Person('a', "A", 1, "aa")
-console.log(A.getFullName());
-
 // exercise2
 interface Vehicle {
     make: string,
@@ -110,4 +86,3 @@ const filterArray = <T>(arrelement: T[], predicate:(item: T) => boolean): T[] =>
     return result
 
 }
-
