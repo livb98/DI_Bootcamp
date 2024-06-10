@@ -2,6 +2,7 @@ const main = document.getElementById("main");
 const find = document.getElementById("find");
 const info = document.getElementById("info");
 const load = document.getElementById("load");
+const i = document.getElementById
 
 
 let arrChar;

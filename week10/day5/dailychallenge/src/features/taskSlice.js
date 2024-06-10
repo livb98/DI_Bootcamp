@@ -31,7 +31,7 @@ export const tasksSlice = createSlice({
         },
         removeCategory: (state, action) => {
             state.categories = state.categories.filter(category => category !== action.payload)
-        },
+        },a
         filterCategory: (state, action) => {
             state.filter = action.payload
         }
